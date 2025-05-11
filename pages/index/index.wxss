@@ -1,0 +1,82 @@
+/**
+ * index.wxss - 游戏首页样式
+ */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f9f1e6;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3)), url('/images/palace-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 40rpx;
+}
+
+.game-title {
+  font-size: 60rpx;
+  font-weight: bold;
+  color: #9b4e20;
+  margin-bottom: 20rpx;
+  text-shadow: 2rpx 2rpx 4rpx rgba(0, 0, 0, 0.2);
+}
+
+.game-version {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 80rpx;
+}
+
+.loading-container {
+  width: 80%;
+  margin-bottom: 60rpx;
+}
+
+progress {
+  margin-bottom: 20rpx;
+}
+
+.loading-text {
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+}
+
+.start-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60rpx;
+}
+
+.start-button {
+  width: 80%;
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color: #9b4e20;
+  color: white;
+  font-size: 32rpx;
+  border-radius: 45rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.2);
+}
+
+.setting-button {
+  width: 60%;
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: #f0f0f0;
+  color: #666;
+  font-size: 28rpx;
+  border-radius: 35rpx;
+}
+
+.footer {
+  position: absolute;
+  bottom: 40rpx;
+  font-size: 24rpx;
+  color: #999;
+}

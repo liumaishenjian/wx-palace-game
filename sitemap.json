@@ -1,0 +1,7 @@
+{
+  "desc": "小游戏页面配置",
+  "rules": [{
+    "action": "allow",
+    "page": "*"
+  }]
+}

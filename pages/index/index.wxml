@@ -1,0 +1,20 @@
+<!-- index.wxml - 游戏首页 -->
+
+<view class="container">
+  <view class="game-title">{{gameTitle}}</view>
+  <view class="game-version">v{{gameVersion}}</view>
+  
+  <view class="loading-container" wx:if="{{isLoading}}">
+    <progress percent="{{loadingProgress}}" stroke-width="4" activeColor="#9b4e20" backgroundColor="#e6e6e6" />
+    <view class="loading-text">{{loadingText}}</view>
+  </view>
+  
+  <view class="start-container" wx:if="{{startButtonVisible}}">
+    <button class="start-button" bindtap="onStartGame">开始游戏</button>
+    <button class="setting-button" open-type="feedback">意见反馈</button>
+  </view>
+  
+  <view class="footer">
+    <text>开发者: 宫斗游戏工作室</text>
+  </view>
+</view>
