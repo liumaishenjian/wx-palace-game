@@ -40,7 +40,7 @@ export class DialogueSystem {
           { speaker: 'palace_maid', text: '这位贵人想要觐见皇上，不知道...', character: 'palace_maid' },
           { speaker: 'emperor', text: '让她进来吧。', character: 'emperor' },
           { speaker: 'player', text: '民女参见皇上，吾皇万岁万岁万万岁。', character: 'player' },
-          { speaker: 'emperor', text: '平身。你就是新入宫的秀女？倒是有几分胆识，刚入宫就敢求见朕。', character: 'emperor' },
+          { speaker: 'emperor', text: '平身。就是新入宫的秀女？倒是有几分胆识，刚入宫就敢求见朕。', character: 'emperor' },
           { speaker: 'player', text: '民女只是想早日见到皇上圣颜，不敢有他意。', character: 'player' },
           { speaker: 'narrator', text: '皇帝对你的印象取决于你的表现和运气...' }
         ]
@@ -129,5 +129,10 @@ export class DialogueSystem {
     for (const callback of this.eventListeners[event]) {
       callback(data)
     }
+  }
+
+  update() {
+    // 对话系统每帧更新逻辑
+    // 此处可添加自动对话推进或选项超时逻辑
   }
 }

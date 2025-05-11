@@ -1,13 +1,6 @@
-// 宫斗小游戏主逻辑
+// 游戏主入口
 
-import { Palace } from './palace/palace'
-import { DialogueSystem } from './systems/dialogueSystem'
-import { CharacterSystem } from './systems/characterSystem'
-import { PromotionSystem } from './systems/promotionSystem'
-import { EventSystem } from './systems/eventSystem'
-import { UIManager } from './ui/uiManager'
-
-export default class Game {
+class Game {
   constructor() {
     console.log('宫斗小游戏初始化')
     
@@ -186,10 +179,52 @@ export default class Game {
   }
   
   update() {
-    // 更新游戏逻辑
+    // 更新游戏系统状态
+    this.dialogueSystem.update()
+    this.characterSystem.update()
+    this.eventSystem.update()
+    this.promotionSystem.update()
+    
+    // 更新宫殿场景
+    this.palace.update()
   }
   
   render() {
-    // 渲染游戏画面
+    // 清空画布
+    this.uiManager.clearCanvas()
+    
+    // 渲染宫殿背景
+    this.palace.render()
+    
+    // 渲染角色
+    this.characterSystem.render()
+    
+    // 渲染对话框和UI
+    this.dialogueSystem.render()
+    this.uiManager.render()
   }
+  
+// 在 main.js 中修改
+async initGame() {
+    try {
+      // 先加载必要资源
+      const resourcesLoaded = await this.uiManager.preloadResources()
+      if (!resourcesLoaded) {
+        throw new Error('资源加载失败')
+      }
+      
+      // 初始化系统
+      this.initSystems()
+      
+      // 加载对话数据
+      await this.dialogueSystem.loadDialogues('chapter1')
+      
+      // 开始游戏循环
+      this.startGameLoop()
+    } catch (err) {
+      console.error('游戏初始化失败:', err)
+      this.uiManager.showErrorMessage('游戏启动失败，请重试')
+    }
+  }
+
 }
